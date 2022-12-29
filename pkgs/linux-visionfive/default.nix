@@ -1,13 +1,14 @@
 { lib, stdenv, fetchFromGitHub, buildLinux, ... } @ args:
 
 buildLinux (args // {
-  version = "5.16.11";
+  version = "6.1-rc6";
 
   src = fetchFromGitHub {
     owner = "starfive-tech";
     repo = "linux";
-    rev = "d7f399d52baa99c715f257707040573768ba3d97";
-    sha256 = "sha256-Xi0sNUrLL7fCnDc5w+mxYJCwiPFaamdvJmKfvbP7ZbY=";
+    # "visionfive" 2022/12/23
+    rev = "a8319390ca6e3f7badfbfc8fcae718546818e27c";
+    sha256 = "sha256-7vE5Y7/TqGiwVu2QNzMOQMUcSi9nIC/5CeaUK3Ce+q8=";
   };
 
   defconfig = "starfive_jh7100_fedora_defconfig";

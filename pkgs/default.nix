@@ -29,7 +29,14 @@ final: prev: rec {
         request_key_helper
       ];
     };
+    linux_visionfive2 = final.callPackage ./linux-visionfive2 {
+      kernelPatches = with final.kernelPatches; [
+        bridge_stp_helper
+        request_key_helper
+      ];
+    };
     linuxPackages_visionfive = final.linuxPackagesFor linux_visionfive;
+    linuxPackages_visionfive2 = final.linuxPackagesFor linux_visionfive2;
   };
 
   unmatched = final.lib.warn "The unmatched attribute is deprecated. Use riscv64 instead." riscv64;
