@@ -2,17 +2,14 @@
 
 buildLinux
   (args // {
-    version = "6.1-rc5";
+    # https://github.com/starfive-tech/linux/tree/JH7110_VisionFive2_upstream
+    version = "6.4-rc1";
 
     src = fetchFromGitHub {
       owner = "starfive-tech";
       repo = "linux";
-      # JH7110_VisionFive2_devel 2022/12/18
-      # rev = "f0fce0037f9cc3fa6013d14d2f11fff7cf1a19da";
-      # sha256 = "sha256-uPWDcP/svGnCXgLVTXUUpVLbWS2qx/FMP7g/0rhgqDg=";
-      # JH7110_VisionFive2_upstream @ 2022/12/20
-      rev = "df28f7ee82408669cf067c36466c5b4c96c3c5ed";
-      sha256 = "sha256-yjIgLlsuYjOPv52m7pftkeGkiwFAFugFgzFvWK3ZBpU=";
+      rev = "5067e82028046501daa6e0c53e8c54343a217f45";
+      hash = "sha256-rydyJbSCsGZSjyL9r6D/HAj4VePssKM9GGE0834dBeI=";
     };
 
     # defconfig = "starfive_visionfive2_defconfig";
